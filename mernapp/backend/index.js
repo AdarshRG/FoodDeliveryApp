@@ -5,11 +5,12 @@ app.use(cors({orgin:'http://localhost:3000'}))
 const db=require('./db')
 const port=5000
 
-app.get('/',(req,res)=>{
-    res.send("Hello World")
-})
+// app.get('/',(req,res)=>{
+//     res.send("Hello World")
+// })
 app.use(express.json())
 app.use("/api",require("./Routes/CreateUser"))
+app.use("/api",require("./Routes/DisplayData"))
 app.listen(port,()=>{
     console.log("..........ems server started.............");
 }) 
