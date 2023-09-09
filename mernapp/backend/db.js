@@ -20,7 +20,7 @@ mongoose
 const express = require("express");
 const router = express.Router();
 
-router.post("/foodData", (req, res) => {
+router.post("/foodData",(req, res) => {
     try {
         if (global.food_items && global.food_category) {
             res.send([global.food_items, global.food_category]);

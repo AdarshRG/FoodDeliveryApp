@@ -1,22 +1,27 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 
-export default function MyCard() {
+export default function MyCard(props) {
+
+let options=props.options
+let priceOptions=Object.keys(options)
+
+
+
+
+
   return (
     <div>
       <div>
-        {" "}
-        <Card className="mt-3" style={{ width: "18rem", maxHeight: "360px" }}>
+        
+        <Card className="mt-3" style={{ width: "18rem", maxHeight: "400px" }}>
           <Card.Img
             variant="top"
-            src="https://i.postimg.cc/LXbGQynX/CTT-fy-2-768x768.webp"
+            src={props.imgSrc}
+            style={{ objectFit: "cover", maxHeight: "200px" }}
           />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+          <Card.Body className="" >
+            <Card.Title>{props.foodName}</Card.Title>
             <div className="container w-100">
               <select className="m-2 h-100  bg-success rounded">
                 {Array.from(Array(6), (e, i) => {
@@ -28,10 +33,11 @@ export default function MyCard() {
                 })}
               </select>
               <select className="m-2 h-100 bg-success rounded">
-                <option value="half">Half</option>
-                <option value="Full">Full</option>
+                {priceOptions.map((data)=>{
+                  return<option key={data} value={data}>{data}</option>
+                })}
               </select>
-              <div className="d-inline h-100 fs-5">Total Prrice</div>
+              <div className="d-inline h-100 fs-5">Total Price</div>
             </div>
           </Card.Body>
         </Card>
