@@ -16,7 +16,7 @@ let priceOptions=Object.keys(options)
         
         <Card className="mt-3" style={{ width: "18rem", maxHeight: "400px" }}>
           <Card.Img
-            variant="top"
+            variant="top"  
             src={props.imgSrc}
             style={{ objectFit: "cover", maxHeight: "200px" }}
           />
